@@ -3,9 +3,19 @@
   <div class="body">
     <tui-loader [showLoader]="loader" [overlay]="true" size="xl">
       <app-news-item
-        *ngFor="let newsItem of newsItems | async"
+        *ngFor="
+          let newsItem of newsItems | async;
+          index as index;
+          trackBy: identify
+        "
         [newsItem]="newsItem"
+        [index]="index"
       ></app-news-item>
     </tui-loader>
   </div>
+  <tui-pagination
+    [length]="length"
+    [index]="index"
+    (indexChange)="goToPage($event)"
+  ></tui-pagination>
 </div>

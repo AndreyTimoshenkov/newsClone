@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { FrontPageComponent } from './frontPage/front-page/front-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsItemComponent } from './frontPage/front-page/news-item/news-item.component';
+import { CommentsComponent } from './frontPage/comments/comments.component';
 
 @NgModule({
   declarations: [AppComponent],

@@ -9,8 +9,9 @@ import { INews } from '../interfaces/news.interface';
 })
 export class NewsItemComponent implements OnChanges {
   @Input() newsItem!: INews;
+  @Input() index!: number;
 
   ngOnChanges(): void {
-    // console.log(this.newsItem.children);
+    console.log(this.newsItem.url);
   }
 }

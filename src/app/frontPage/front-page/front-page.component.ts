@@ -6,6 +6,7 @@ import { Observable, map, tap } from 'rxjs';
 import { AsyncPipe, NgForOf } from '@angular/common';
 import { TuiLoaderModule } from '@taiga-ui/core';
 import { HeaderComponent } from 'src/app/header/header.component';
+import { TuiPaginationModule } from '@taiga-ui/kit';
 
 @Component({
   standalone: true,
@@ -18,16 +19,29 @@ import { HeaderComponent } from 'src/app/header/header.component';
     NgForOf,
     TuiLoaderModule,
     HeaderComponent,
+    TuiPaginationModule,
   ],
 })
 export class FrontPageComponent {
   loader: boolean;
+  index = 0;
+  rowsPerPage = 5;
+  length = 20 / this.rowsPerPage;
 
   newsItems: Observable<INews[]> = this.data
     .getNews()
     .pipe(tap(() => (this.loader = true)))
     .pipe(map((response) => response.hits))
     .pipe(tap(() => (this.loader = false)));
+
+  identify(index: number, item: INews) {
+    return item.objectID;
+  }
+
+  goToPage(index: number): void {
+    this.index = index;
+    console.info('New page:', index);
+  }
 
   constructor(private data: GetFrontPageDataService) {
     // this.newsItems.subscribe((item) => console.log(item));
