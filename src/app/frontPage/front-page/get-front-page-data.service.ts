@@ -7,6 +7,9 @@ import { IFrontPage } from './interfaces/front-page.interface';
   providedIn: 'root',
 })
 export class GetFrontPageDataService {
+  tap() {
+    throw new Error('Method not implemented.');
+  }
   constructor(private http: HttpClient) {}
 
   private newsUrl = 'http://hn.algolia.com/api/v1/search?tags=front_page';

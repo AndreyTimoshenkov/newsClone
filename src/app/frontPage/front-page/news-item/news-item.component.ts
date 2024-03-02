@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges } from '@angular/core';
 import { INews } from '../interfaces/news.interface';
 
 @Component({
@@ -10,7 +10,7 @@ import { INews } from '../interfaces/news.interface';
 export class NewsItemComponent implements OnChanges {
   @Input() newsItem!: INews;
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log(this.newsItem.children);
+  ngOnChanges(): void {
+    // console.log(this.newsItem.children);
   }
 }

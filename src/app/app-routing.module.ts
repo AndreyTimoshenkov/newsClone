@@ -6,7 +6,7 @@ const routes: Routes = [
   {
     path: '',
     component: FrontPageComponent,
-    title: 'Home page',
+    title: 'Front Page | Clone App',
   },
 ];
 
