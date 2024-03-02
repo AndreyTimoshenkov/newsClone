@@ -12,9 +12,10 @@ export class GetFrontPageDataService {
   }
   constructor(private http: HttpClient) {}
 
-  private newsUrl = 'http://hn.algolia.com/api/v1/search?tags=front_page';
+  private baseUrl = 'http://hn.algolia.com/api/v1/search?tags=front_page';
 
-  getNews(): Observable<IFrontPage> {
-    return this.http.get<IFrontPage>(this.newsUrl);
+  getNews(hitsPerPage: number, index: number): Observable<IFrontPage> {
+    let newsUrl = `${this.baseUrl}&hitsPerPage=${hitsPerPage}&page=${index}`;
+    return this.http.get<IFrontPage>(newsUrl);
   }
 }

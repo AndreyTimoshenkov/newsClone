@@ -25,11 +25,11 @@ import { TuiPaginationModule } from '@taiga-ui/kit';
 export class FrontPageComponent {
   loader: boolean;
   index = 0;
-  rowsPerPage = 5;
-  length = 20 / this.rowsPerPage;
+  hitsPerPage = 10;
+  length = 20 / this.hitsPerPage;
 
   newsItems: Observable<INews[]> = this.data
-    .getNews()
+    .getNews(this.hitsPerPage, this.index)
     .pipe(tap(() => (this.loader = true)))
     .pipe(map((response) => response.hits))
     .pipe(tap(() => (this.loader = false)));
