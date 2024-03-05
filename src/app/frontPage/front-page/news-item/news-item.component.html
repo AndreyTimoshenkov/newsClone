@@ -1,11 +1,16 @@
 <div class="news-item">
-  <span class="index">{{ index + 1 }}.</span>
+  <span class="index">{{ getIndex(index) }}.</span>
   <span class="title"
     ><a href="{{ newsItem.url }}">{{ newsItem.title }}</a></span
   >
   <div class="subtitle">
     <span> by {{ newsItem.author }}</span> |
-    <span> {{ newsItem.num_comments }} comments</span> |
+    <span>
+      <a [routerLink]="['items', newsItem.objectID]">
+        {{ newsItem.num_comments }} comments</a
+      ></span
+    >
+    |
     <span> {{ newsItem.points }} points</span>
   </div>
 </div>

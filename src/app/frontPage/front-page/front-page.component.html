@@ -1,21 +1,19 @@
 <div class="wrapper">
-  <app-header></app-header>
   <div class="body">
     <tui-loader [showLoader]="loader" [overlay]="true" size="xl">
       <app-news-item
-        *ngFor="
-          let newsItem of newsItems | async;
-          index as index;
-          trackBy: identify
-        "
+        *ngFor="let newsItem of newsItems | async; index as index"
         [newsItem]="newsItem"
         [index]="index"
+        [hitsPerPage]="hitsPerPage"
+        [page]="(currentPage | async)!"
       ></app-news-item>
     </tui-loader>
   </div>
   <tui-pagination
     [length]="length"
     [index]="index"
+    [focusable]="true"
     (indexChange)="goToPage($event)"
     [activePadding]="1"
     [sidePadding]="-1"

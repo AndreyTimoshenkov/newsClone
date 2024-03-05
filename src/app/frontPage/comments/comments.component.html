@@ -1,1 +1,25 @@
-<p>comments works!</p>
+<div class="wrapper">
+  <button
+    class="return"
+    tuiButton
+    icon="tuiIconChevronLeftLarge"
+    (click)="clickBack()"
+    appearance="flat"
+  >
+    Back to results
+  </button>
+  <section class="content">
+    <tui-loader [showLoader]="loader" [overlay]="true" size="xl">
+      <span class="title"
+        ><a href="{{ newsItem?.url }}">{{ newsItem?.title }}</a></span
+      >
+      <div class="subtitle">
+        <span> by {{ newsItem?.author }}</span> |
+        <span> {{ newsItem?.points }} points</span>
+      </div>
+    </tui-loader>
+  </section>
+</div>
+
+<!--     *ngFor=" let news-item of newsItem?.children
+    " [newsItem]="newsItem" > -->

@@ -9,6 +9,7 @@ import { FrontPageComponent } from './frontPage/front-page/front-page.component'
 import { HttpClientModule } from '@angular/common/http';
 import { NewsItemComponent } from './frontPage/front-page/news-item/news-item.component';
 import { CommentsComponent } from './frontPage/comments/comments.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -20,6 +21,7 @@ import { CommentsComponent } from './frontPage/comments/comments.component';
     HttpClientModule,
     FrontPageComponent,
     NewsItemComponent,
+    HeaderComponent,
   ],
   providers: [],
   bootstrap: [AppComponent],
