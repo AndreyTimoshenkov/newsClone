@@ -1,7 +1,11 @@
-<!-- <div class="text">
-  {{ comments }}
-</div> -->
-
-<app-comment-item *ngFor="let comment of comments" [comment]="comment">{{
-  comment?.text
-}}</app-comment-item>
+<div class="comment">
+  {{ comment?.author }} on
+  {{ comment?.created_at | date : "MMM dd, yyyy 'at' hh:mm a" }}
+  <div class="text" [innerHTML]="comment?.text"></div>
+  <div *ngIf="comment?.children?.length">
+    <app-comment-item
+      *ngFor="let comment of comment?.children"
+      [comment]="comment"
+    ></app-comment-item>
+  </div>
+</div>
