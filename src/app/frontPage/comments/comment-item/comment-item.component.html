@@ -1,0 +1,7 @@
+<!-- <div class="text">
+  {{ comments }}
+</div> -->
+
+<app-comment-item *ngFor="let comment of comments" [comment]="comment">{{
+  comment?.text
+}}</app-comment-item>

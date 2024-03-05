@@ -17,9 +17,10 @@
         <span> by {{ newsItem?.author }}</span> |
         <span> {{ newsItem?.points }} points</span>
       </div>
+      <app-comment-item
+        *ngFor="let commentItem of newsItem?.children"
+        [comments]="newsItem?.children"
+      ></app-comment-item>
     </tui-loader>
   </section>
 </div>
-
-<!--     *ngFor=" let news-item of newsItem?.children
-    " [newsItem]="newsItem" > -->

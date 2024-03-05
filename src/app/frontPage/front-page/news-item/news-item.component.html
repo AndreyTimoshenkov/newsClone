@@ -1,9 +1,9 @@
 <div class="news-item">
-  <span class="index">{{ getIndex(index) }}.</span>
+  <span class="index">{{ calculateIndex(index) }}.</span>
   <span class="title"
     ><a href="{{ newsItem.url }}">{{ newsItem.title }}</a></span
   >
-  <div class="subtitle">
+  <div>
     <span> by {{ newsItem.author }}</span> |
     <span>
       <a [routerLink]="['items', newsItem.objectID]">

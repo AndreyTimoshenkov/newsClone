@@ -1,24 +1,20 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { IFrontPage } from './interfaces/front-page.interface';
 import { INews } from './interfaces/news.interface';
+import { ErrorAlertService } from './error-alert.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GetDataService {
-  tap() {
-    throw new Error('Method not implemented.');
-  }
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private alerts: ErrorAlertService) {}
 
   private frontPageUrl = 'http://hn.algolia.com/api/v1/search?tags=front_page';
   private itemUrl = 'https://hn.algolia.com/api/v1/items/';
 
-  getNews(hitsPerPage: number, index: number): Observable<IFrontPage> {
-    // let page = index.value;
-    console.log(index);
+  getNews(hitsPerPage: number, index: number | null): Observable<IFrontPage> {
     let url = `${this.frontPageUrl}&hitsPerPage=${hitsPerPage}&page=${index}`;
     return this.http.get<IFrontPage>(url);
   }

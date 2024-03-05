@@ -1,6 +1,8 @@
+import { ICommentItemInterface } from '../../comments/comment-item/commentItem.interface';
+
 export interface INews {
   author: string;
-  children: Array<number>;
+  children: Array<ICommentItemInterface>;
   created_at: string;
   created_at_i: number;
   num_comments: number;

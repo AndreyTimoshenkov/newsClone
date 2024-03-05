@@ -16,10 +16,10 @@ export class NewsItemComponent implements OnChanges {
   @Input() page!: number;
 
   ngOnChanges(): void {
-    console.log(this.page, this.hitsPerPage);
+    // console.log(this.page, this.hitsPerPage);
   }
 
-  getIndex(index: number) {
+  calculateIndex(index: number) {
     return this.hitsPerPage * this.page + index + 1;
   }
 }

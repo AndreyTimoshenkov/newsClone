@@ -1,4 +1,4 @@
-import { TuiRootModule } from '@taiga-ui/core';
+import { TuiAlertModule, TuiRootModule } from '@taiga-ui/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { FrontPageComponent } from './frontPage/front-page/front-page.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NewsItemComponent } from './frontPage/front-page/news-item/news-item.component';
-import { CommentsComponent } from './frontPage/comments/comments.component';
+// import { CommentsComponent } from './frontPage/comments/comments.component';
 import { HeaderComponent } from './header/header.component';
 
 @NgModule({
@@ -22,6 +22,7 @@ import { HeaderComponent } from './header/header.component';
     FrontPageComponent,
     NewsItemComponent,
     HeaderComponent,
+    TuiAlertModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

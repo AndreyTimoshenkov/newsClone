@@ -1,8 +1,13 @@
 <div class="wrapper">
   <div class="body">
-    <tui-loader [showLoader]="loader" [overlay]="true" size="xl">
+    <tui-loader
+      [showLoader]="loader"
+      [overlay]="true"
+      size="xl"
+      [inheritColor]="true"
+    >
       <app-news-item
-        *ngFor="let newsItem of newsItems | async; index as index"
+        *ngFor="let newsItem of newsItems$ | async; index as index"
         [newsItem]="newsItem"
         [index]="index"
         [hitsPerPage]="hitsPerPage"
@@ -11,7 +16,7 @@
     </tui-loader>
   </div>
   <tui-pagination
-    [length]="length"
+    [length]="(length | async)!"
     [index]="index"
     [focusable]="true"
     (indexChange)="goToPage($event)"
