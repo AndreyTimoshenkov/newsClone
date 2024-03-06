@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ICommentItemInterface } from './commentItem.interface';
+import { ICommentItemInterface } from '../../interfaces/commentItem.interface';
 @Component({
   selector: 'app-comment-item',
   standalone: true,

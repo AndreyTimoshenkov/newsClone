@@ -13,14 +13,12 @@
         [hitsPerPage]="hitsPerPage"
         [page]="(currentPage | async)!"
       ></app-news-item>
+      <tui-pagination
+        [length]="(length | async)!"
+        [index]="index"
+        [focusable]="true"
+        (indexChange)="goToPage($event)"
+      ></tui-pagination>
     </tui-loader>
   </div>
-  <tui-pagination
-    [length]="(length | async)!"
-    [index]="index"
-    [focusable]="true"
-    (indexChange)="goToPage($event)"
-    [activePadding]="1"
-    [sidePadding]="-1"
-  ></tui-pagination>
 </div>

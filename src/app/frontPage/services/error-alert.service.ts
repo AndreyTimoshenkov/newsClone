@@ -10,9 +10,9 @@ export class ErrorAlertService {
     let errorMessage = '';
     if (err.status === 0) {
       errorMessage =
-        'Вероятно, вы пытаетесь получить данные без VPN. Пожалуйста, проверьте ваше интернет-соединение';
+        'It looks like your VPN is turned off. Please check your internet connection and try again.';
     } else if (err) {
-      errorMessage = 'Неизвестная ошибка';
+      errorMessage = 'Unknown error';
     }
     this.alerts
       .open(`${errorMessage}`, {

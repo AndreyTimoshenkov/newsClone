@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Location, NgForOf } from '@angular/common';
 import { TuiButtonModule, TuiLoaderModule } from '@taiga-ui/core';
-import { GetDataService } from '../front-page/get-data.service';
+import { GetDataService } from '../services/get-data.service';
 import { catchError, of, switchMap, tap } from 'rxjs';
-import { INews } from '../front-page/interfaces/news.interface';
+import { INews } from '../interfaces/news.interface';
 import { CommentItemComponent } from './comment-item/comment-item.component';
-import { ErrorAlertService } from '../front-page/error-alert.service';
+import { ErrorAlertService } from '../services/error-alert.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 

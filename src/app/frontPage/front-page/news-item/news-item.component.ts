@@ -1,5 +1,5 @@
-import { Component, Input, OnChanges } from '@angular/core';
-import { INews } from '../interfaces/news.interface';
+import { Component, Input } from '@angular/core';
+import { INews } from '../../interfaces/news.interface';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,15 +9,11 @@ import { RouterLink } from '@angular/router';
   styleUrls: ['./news-item.component.less'],
   imports: [RouterLink],
 })
-export class NewsItemComponent implements OnChanges {
+export class NewsItemComponent {
   @Input() newsItem!: INews;
   @Input() index!: number;
   @Input() hitsPerPage!: number;
   @Input() page!: number;
-
-  ngOnChanges(): void {
-    // console.log(this.page, this.hitsPerPage);
-  }
 
   calculateIndex(index: number) {
     return this.hitsPerPage * this.page + index + 1;

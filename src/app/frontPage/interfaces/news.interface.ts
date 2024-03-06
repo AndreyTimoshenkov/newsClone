@@ -1,4 +1,4 @@
-import { ICommentItemInterface } from '../../comments/comment-item/commentItem.interface';
+import { ICommentItemInterface } from './commentItem.interface';
 
 export interface INews {
   author: string;

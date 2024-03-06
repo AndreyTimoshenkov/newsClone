@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { GetDataService } from './get-data.service';
+import { GetDataService } from '../services/get-data.service';
 import { NewsItemComponent } from './news-item/news-item.component';
-import { INews } from '../front-page/interfaces/news.interface';
+import { INews } from '../interfaces/news.interface';
 import {
   BehaviorSubject,
   Observable,
@@ -15,10 +15,10 @@ import { AsyncPipe, NgForOf } from '@angular/common';
 import { TuiLoaderModule } from '@taiga-ui/core';
 import { HeaderComponent } from 'src/app/header/header.component';
 import { TuiPaginationModule } from '@taiga-ui/kit';
-import { ErrorAlertService } from './error-alert.service';
+import { ErrorAlertService } from '../services/error-alert.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
-import { IFrontPage } from './interfaces/front-page.interface';
+import { IFrontPage } from '../interfaces/front-page.interface';
 
 @Component({
   standalone: true,

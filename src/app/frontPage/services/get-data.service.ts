@@ -1,15 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { IFrontPage } from './interfaces/front-page.interface';
-import { INews } from './interfaces/news.interface';
-import { ErrorAlertService } from './error-alert.service';
+import { IFrontPage } from '../interfaces/front-page.interface';
+import { INews } from '../interfaces/news.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class GetDataService {
-  constructor(private http: HttpClient, private alerts: ErrorAlertService) {}
+  constructor(private http: HttpClient) {}
 
   private frontPageUrl = 'http://hn.algolia.com/api/v1/search?tags=front_page';
   private itemUrl = 'https://hn.algolia.com/api/v1/items/';
@@ -21,7 +20,6 @@ export class GetDataService {
 
   getNewsItem(itemId: string): Observable<INews> {
     let url = `${this.itemUrl}${itemId}`;
-    console.log(url);
     return this.http.get<INews>(url);
   }
 }

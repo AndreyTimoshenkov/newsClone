@@ -7,12 +7,12 @@ const routes: Routes = [
   {
     path: '',
     component: FrontPageComponent,
-    title: 'Front Page | Clone App',
+    title: 'Front Page | HN Clone App',
   },
   {
     path: 'items/:id',
     component: CommentsComponent,
-    title: 'News Item Comments',
+    title: 'Comments | HN Clone App',
   },
 ];
 
