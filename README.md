@@ -6,8 +6,9 @@ To run the app locally, follow these steps:
 
 1. npm i (to install dependencies);
 2. Turn on VPN to get data from the server;
-3. Open [localhost](http://localhost:4200/);
-4. Have fun!
+3. npm run start (to start the development server);
+4. Open [localhost](http://localhost:4200/);
+5. Have fun!
 
 The app clones Hacker News front page. The app's features include but are not limited to:
 
